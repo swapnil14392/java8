@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CollectMethodOfStreamInterface {
+public class CollectAndCountMethodOfStreamInterface {
 
 	public static void main(String[] args) {
 
@@ -15,14 +15,20 @@ public class CollectMethodOfStreamInterface {
 		list.add("Dhawan");
 		list.add("malinga");
 		
+		
+//	1.	Collect Method
 		List<String> list1=list.stream().filter(i->i.length()>6).collect(Collectors.toList());
 		System.out.println(list1);
 		
 		List<String> list2=list.stream().map(s->s.toUpperCase()+" Indian Team".toUpperCase()).collect(Collectors.toList());
 		System.out.println(list2);
-		
+	
+//	2.	Count Method		
 		Long count=list.stream().filter(i->i.length()>6).count();
 		System.out.println(count);
+		
+
+		
 		
 	}
 

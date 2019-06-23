@@ -25,8 +25,6 @@ public class SortedMethodOfStreamInterface {
 	   
 	   List<Integer> lsss=list.stream().sorted((I1,I2)->-I1.compareTo(I2)).collect(Collectors.toList());
 	   System.out.println("After Dsc-2-"+lsss);
-	   
-	   
 
 	}
 
