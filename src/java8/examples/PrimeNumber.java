@@ -1,11 +1,9 @@
 package java8.examples;
 
+import static java.util.stream.Collectors.toList;
+
 import java.math.BigInteger;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 public class PrimeNumber {
 
@@ -16,28 +14,18 @@ public class PrimeNumber {
 		  Stream.iterate(BigInteger.valueOf(2), BigInteger::nextProbablePrime)
 		  .limit(10) .forEach(x->System.out.format("%s ", x)); System.out.println();
 		 
-		/* method-2 */
-		List<Integer> generate = PrimeNumber.generate(10);
-		generate.forEach(x->System.out.format("%s ", x));
+		/* method-2 using predefine list */ 
+		
+		 System.out.println(Stream.iterate(1, i -> ++i)
+				 .filter(i -> i %2 != 0)
+				  .filter(PrimeNumber::isPrime).limit(10)
+                             .collect(toList()));
+		 
+	}
+	 public static boolean isPrime(int number) {
+		
+		 return !IntStream.rangeClosed(2, number/2).anyMatch(i -> number%i == 0); 
+	    }
 
-	}
-	private static List<Integer> generate(int series) {
-		 Set<Integer> set = new TreeSet<>();
-		 return Stream.iterate(1, i -> ++i)
-	                .filter(i -> i %2 != 0)
-	                
-	                .filter(i -> {
-	                    set.add(i);
-	                    return 0 == set.stream()
-	                            .filter(p -> p != 1)
-	                            .filter(p -> !Objects.equals(p, i))
-	                            .filter(p -> i % p == 0)
-	                            .count();
-	                })
-	                .limit(series)
-	                .collect(Collectors.toList());
-	}
-	
-	
 	
 }
