@@ -14,12 +14,17 @@ interface Interef
 	}
 	
 	
-	//You cant override
-//	default String toString()
-//	{
-//		System.out.println("default method phone");
-//		return "phone";
-//	}
+	// default method cannot override a method from java.lang.Object 
+	/*
+	 * Note: Object is the base class for all the java classes. 
+	 * Object class methods are by-default available to every Java class
+	 *  hence it’s not required to bring through default methods*/
+	
+	/*default String toString()
+	{
+		System.out.println("default method phone");
+		return "phone";
+	}*/
 }
 
 
@@ -33,9 +38,11 @@ public class DefaultMethodOfInterface implements  Interef
 
 	public static void main(String[] args) {
 		
-		DefaultMethodOfInterface t = new DefaultMethodOfInterface();
+		Interef t = new DefaultMethodOfInterface();
 		t.mobile();
         t.phone();
+        
+        
 	}
 
 }

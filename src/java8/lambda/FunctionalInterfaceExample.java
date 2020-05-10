@@ -1,5 +1,6 @@
 package java8.lambda;
-
+/* a functional interface has exactly one abstract
+ * method.*/
 @FunctionalInterface
 interface GrandFather
 {
@@ -38,7 +39,7 @@ class Son implements Father1
 {
 	@Override
 	public void m1() {
-		System.out.println("m1() implemented");
+		System.out.println(" Son m1() implemented");
 	}
 }
 
@@ -54,6 +55,8 @@ public class FunctionalInterfaceExample {
 		
 		Father2 father2 = ()->{System.out.println("m1() implemented using lambda Expression"); };
 		father2.m1();
+		
+		
 		
 	}
 

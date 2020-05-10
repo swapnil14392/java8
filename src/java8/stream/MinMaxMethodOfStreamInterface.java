@@ -24,7 +24,7 @@ public class MinMaxMethodOfStreamInterface {
 	   System.out.println("After Max--"+max);	
 	   
 	   
-//	   Using compareTO methos
+//	   Using compareTO method
 			   
 	   Integer min1=list.stream().min((I1,I2)->(I1>I2)?1:(I1<I2)?-1:0).get();
 	   System.out.println("After Min--"+min1);	

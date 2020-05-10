@@ -5,6 +5,7 @@ interface Bodmas
 {	
 	public void add(int a,int b);
 }
+
 class Maths implements Bodmas
 {
 	@Override
@@ -12,6 +13,7 @@ class Maths implements Bodmas
 		int c=a+b;
 		System.out.println("Addition is="+c);
 	}
+	
 	
 }
 //--------------------------------------------------------------------------
@@ -36,6 +38,10 @@ public class LambdaWithMethodArguements {
 		bodmas.add(10,20);
 		Bodmas bodmas1 =(a,b)->System.out.println("Lambda Expression Addition is="+(a+b));
 		bodmas1.add(10,20);
+		
+		Bodmas bd=(a,b)->System.out.println("Test Lambda ternary:::"+((a>b)?(a-b):(b-a)));
+			
+		bd.add(25, 56);
 		
 		LengthCheck lengthCheck = new Demo();
 		System.out.println("Without Lambda Expression--"+lengthCheck.getLength("balmukund"));

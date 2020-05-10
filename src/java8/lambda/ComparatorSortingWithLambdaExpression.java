@@ -21,6 +21,7 @@ public class ComparatorSortingWithLambdaExpression {
 		Comparator<Integer> comparator = new MyComparator();
 		
 		Comparator<Integer> comparatorLambda=(o1,o2)->{return (o1>o2)?-1:(o1<o2)?1:0;};
+		Comparator<Integer> comparatorAscLambda=(o1,o2)->{return (o1>o2)?1:(o1<o2)?-1:0;};
 		
 		List<Integer> list= new ArrayList<>();
 		list.add(10);
@@ -37,8 +38,12 @@ public class ComparatorSortingWithLambdaExpression {
 	   System.out.println("After sorting--Descending order--"+list);
 	   
 //	   Using Lambda Expression
+	   Collections.sort(list,comparatorAscLambda);
+	   System.out.println("After sorting--Ascending order-Lambda-"+list);
 	   Collections.sort(list,comparatorLambda);
 	   System.out.println("After sorting--Descending order-Lambda-"+list);
+	   
+	   
 		
 
 	}

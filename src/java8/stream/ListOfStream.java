@@ -16,7 +16,9 @@ public class ListOfStream {
 		list.add(0);
 		list.add(3);
 		list.add(15);
-		
+		list.add(10);
+		list.add(3);
+		list.add(15);
 	   System.out.println("Before sorting--"+list);	
 	   
 	   List<Integer> ls=list.stream().filter(i->i%2==0).collect(Collectors.toList());
@@ -27,8 +29,13 @@ public class ListOfStream {
 			   
 	   System.out.println("Performing Operation on existing values 2 times--"+lss);
 	   
-	   Stream<Integer> s=list.stream().filter(i->i%2==0);
-	   System.out.println(s);
+	   list.stream().distinct().limit(3).forEach(System.out::println);
+	   System.out.println();
+	   
+	   /*Note:  return parallel Stream collection, for sequential order used sequential explicitly with it*/
+	   list.parallelStream().forEach(System.out::println);
+	   System.out.println();
+	   list.parallelStream().sequential().forEach(System.out::println);
 	  
 
 	}

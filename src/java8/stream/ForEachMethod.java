@@ -2,6 +2,7 @@ package java8.stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class ForEachMethod {
 
@@ -17,7 +18,9 @@ public class ForEachMethod {
 //		This is by lambda Expression
 		list.stream().forEach(s->System.out.println(s));
 		System.out.println();
-		
+		//filter predicate
+		list.stream().filter(i->i>10).forEach(s->System.out.println(s));
+		System.out.println();
 //		This is by method reference
 		list.stream().forEach(System.out::println);
 

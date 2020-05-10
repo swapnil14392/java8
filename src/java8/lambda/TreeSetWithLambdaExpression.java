@@ -13,14 +13,14 @@ public class TreeSetWithLambdaExpression {
 //		More Concise code
 		Comparator<Integer> comparatorLambda=(I1,I2)->(I1>I2)?-1:(I1<I2)?1:0;
 		
-		Set<Integer> treeset= new TreeSet<>(comparatorLambda);
+		Set<Integer> treeset= new TreeSet<>(comparatorLambda); //Note: for desc oder sorting pass comparator
 		treeset.add(10);
 		treeset.add(5);
 		treeset.add(3);
 		treeset.add(20);
 		treeset.add(15);
 		treeset.add(30);
-		System.out.println("Before sorting--"+treeset);	
+		System.out.println("descending sorting--"+treeset);	
 		
 	}
 

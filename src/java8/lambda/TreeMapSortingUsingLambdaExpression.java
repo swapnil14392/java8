@@ -17,7 +17,9 @@ public class TreeMapSortingUsingLambdaExpression {
 		map.put(4,"dhawan");
 		map.put(20,"Durga");
 		map.put(0,"Sachin");
-		System.out.println("Before sorting--"+map);	
+		System.out.println("Before sorting--"+map);
+		
+		
 		
 	}
 
