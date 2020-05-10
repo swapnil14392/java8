@@ -1,5 +1,4 @@
 # Java8
-
 Java Projects
 
 Issue 1] No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK?
