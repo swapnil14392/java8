@@ -10,11 +10,13 @@ import java.util.stream.Stream;
 public class PrimeNumber {
 
 	public static void main(String[] args) {
-		Stream.iterate(BigInteger.valueOf(2), BigInteger::nextProbablePrime)
-		.limit(10)
-		.forEach(x->System.out.format("%s ", x));
-		System.out.println();
-		/*method-2*/
+		/* method-1 : 
+		 * BigInteger class having nextProbablePrime method return probably prime numbers 
+		  */
+		  Stream.iterate(BigInteger.valueOf(2), BigInteger::nextProbablePrime)
+		  .limit(10) .forEach(x->System.out.format("%s ", x)); System.out.println();
+		 
+		/* method-2 */
 		List<Integer> generate = PrimeNumber.generate(10);
 		generate.forEach(x->System.out.format("%s ", x));
 
@@ -35,18 +37,6 @@ public class PrimeNumber {
 	                .limit(series)
 	                .collect(Collectors.toList());
 	}
-	
-	/* method -3*/
-	/*public static List<Integer> primeNumbersTill(int n) {
-		    return IntStream.rangeClosed(2, n)
-		      .filter(x -> isPrime(x)).boxed()
-		      .collect(Collectors.toList());
-		}
-		private static boolean isPrime(int number) {
-		    return IntStream.rangeClosed(2, (int) (Math.sqrt(number)))
-		      .filter(n -> (n & 0X1) != 0)
-		      .allMatch(n -> x % n != 0);
-		}*/
 	
 	
 	
